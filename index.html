@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato | Rafael Selvagio</title>
+    <title>Rafael Selvagio | Perfil, Contato e Projetos</title>
     <!-- Google Fonts & Font Awesome Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
         * {
@@ -16,58 +16,62 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
             background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+            background-attachment: fixed;
             overflow-x: hidden;
             position: relative;
-            padding: 40px 20px;
+            padding: 40px 20px 60px;
+            gap: 40px;
         }
 
         /* Decorative background blobs for glassmorphism effect */
         .blob {
-            position: absolute;
+            position: fixed;
             border-radius: 50%;
-            filter: blur(60px);
+            filter: blur(70px);
             z-index: 1;
-            opacity: 0.6;
-            animation: float 10s ease-in-out infinite alternate;
+            opacity: 0.55;
+            pointer-events: none;
+            animation: float 12s ease-in-out infinite alternate;
         }
 
         .blob-1 {
-            width: 300px;
-            height: 300px;
+            width: 380px;
+            height: 380px;
             background: #4f46e5;
-            top: -50px;
-            left: -50px;
+            top: -80px;
+            left: -80px;
         }
 
         .blob-2 {
-            width: 400px;
-            height: 400px;
+            width: 440px;
+            height: 440px;
             background: #7c3aed;
-            bottom: -100px;
-            right: -50px;
+            bottom: -120px;
+            right: -80px;
             animation-delay: -3s;
         }
 
         .blob-3 {
-            width: 250px;
-            height: 250px;
+            width: 320px;
+            height: 320px;
             background: #db2777;
-            top: 40%;
-            left: 75%;
+            top: 45%;
+            left: 70%;
             animation-delay: -6s;
         }
 
         @keyframes float {
             0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(30px, 40px) scale(1.1); }
+            100% { transform: translate(35px, 45px) scale(1.1); }
         }
 
         /* Main Container */
@@ -84,7 +88,7 @@
             grid-template-columns: 1fr 1.2fr;
             gap: 40px;
             z-index: 10;
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.35);
         }
 
         /* Profile & Info Column */
@@ -113,6 +117,7 @@
             object-fit: cover;
             border: 3px solid rgba(255, 255, 255, 0.2);
             background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
 
         .name {
@@ -128,16 +133,42 @@
             font-size: 1rem;
             color: #a5b4fc;
             font-weight: 400;
-            margin-bottom: 25px;
+            margin-bottom: 18px;
             letter-spacing: 0.5px;
         }
 
         .tagline {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 300;
             line-height: 1.6;
-            margin-bottom: 35px;
+            margin-bottom: 24px;
             color: #e2e8f0;
+        }
+
+        /* Shortcut CTA Button to Projects */
+        .cta-projects-link {
+            width: 100%;
+            padding: 12px 18px;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.25), rgba(168, 85, 247, 0.25));
+            border: 1px solid rgba(168, 85, 247, 0.4);
+            border-radius: 12px;
+            color: #f1f5f9;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-projects-link:hover {
+            background: linear-gradient(90deg, #6366f1, #a855f7);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
         }
 
         /* Social/Contact Links */
@@ -259,6 +290,293 @@
             transform: translateY(0);
         }
 
+        /* ================================================= */
+        /* PROJECTS SECTION                                  */
+        /* ================================================= */
+        .projects-section {
+            width: 100%;
+            max-width: 1000px;
+            z-index: 10;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .section-header h2 {
+            color: #fff;
+            font-size: 1.85rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(90deg, #ffffff, #c7d2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-header p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-top: 6px;
+        }
+
+        /* Category Filter Buttons */
+        .category-filters {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .category-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #cbd5e1;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(8px);
+        }
+
+        .category-btn:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .category-btn.active {
+            background: linear-gradient(90deg, #6366f1, #a855f7);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
+        }
+
+        .category-badge-count {
+            background: rgba(255, 255, 255, 0.22);
+            padding: 1px 7px;
+            border-radius: 12px;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 26px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            transition: transform 0.3s ease, opacity 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(129, 140, 248, 0.4);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4), 0 0 25px rgba(99, 102, 241, 0.15);
+        }
+
+        /* Card Header / Banner Previews with Theme Colors */
+        .project-banner {
+            height: 125px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 22px;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Banner Themes */
+        .banner-green {
+            background: linear-gradient(135deg, #092014 0%, #107c41 55%, #054020 100%);
+        }
+        .banner-blue {
+            background: linear-gradient(135deg, #082f49 0%, #0284c7 55%, #0369a1 100%);
+        }
+        .banner-pink {
+            background: linear-gradient(135deg, #2e1065 0%, #7c3aed 50%, #db2777 100%);
+        }
+        .banner-python {
+            background: linear-gradient(135deg, #0b1a30 0%, #1e40af 55%, #3b82f6 100%);
+        }
+        .banner-playful {
+            background: linear-gradient(135deg, #3b0764 0%, #9333ea 50%, #f43f5e 100%);
+        }
+
+        .project-banner-grid {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.6;
+        }
+
+        .project-banner-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-badge-tag {
+            display: inline-block;
+            color: #fff;
+            font-size: 0.68rem;
+            font-weight: 800;
+            padding: 3px 9px;
+            border-radius: 5px;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+        }
+
+        .tag-senai { background: #e30613; }
+        .tag-mkt { background: #0284c7; }
+        .tag-landing { background: #db2777; }
+        .tag-python { background: #eab308; color: #0f172a !important; }
+        .tag-infantil { background: #f43f5e; }
+
+        .project-banner-title {
+            color: #fff;
+            font-size: 1.15rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+        }
+
+        .project-banner-icon {
+            position: relative;
+            z-index: 2;
+            width: 50px;
+            height: 50px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.45rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-body {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .project-desc {
+            color: #cbd5e1;
+            font-size: 0.88rem;
+            line-height: 1.6;
+            margin-bottom: 18px;
+            flex: 1;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 20px;
+        }
+
+        .project-tag {
+            font-size: 0.74rem;
+            font-weight: 500;
+            color: #a5b4fc;
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            padding: 3px 9px;
+            border-radius: 20px;
+        }
+
+        .project-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .project-btn {
+            flex: 1;
+            min-width: 125px;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .project-btn.primary {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+        }
+
+        .project-btn.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.5);
+            filter: brightness(1.1);
+        }
+
+        .project-btn.secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: #e2e8f0;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .project-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Footer */
+        .page-footer {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            z-index: 10;
+        }
+
         /* Success Message Modal */
         .modal-overlay {
             position: fixed;
@@ -363,6 +681,15 @@
                 padding-right: 0;
                 padding-bottom: 40px;
             }
+
+            .category-filters {
+                gap: 8px;
+            }
+
+            .category-btn {
+                padding: 7px 14px;
+                font-size: 0.82rem;
+            }
         }
     </style>
 </head>
@@ -373,8 +700,8 @@
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
 
-    <!-- Main Card -->
-    <div class="container">
+    <!-- Main Card (Profile & Contact) -->
+    <div class="container" id="sobre">
         
         <!-- Left Side: Profile and Links -->
         <section class="profile-side">
@@ -386,11 +713,16 @@
             <p class="title">Instrutor de Formação Profissional</p>
             <p class="tagline">"Vamos construir algo incrível juntos?"</p>
             
+            <!-- Quick Link to Projects -->
+            <a href="#projetos" class="cta-projects-link">
+                <i class="fa-solid fa-laptop-code"></i> Ver Projetos Desenvolvidos
+            </a>
+
             <div class="links-container">
-                <a href="https://www.linkedin.com/in/rafaelselvagio/" target="_blank" class="contact-link linkedin">
+                <a href="https://www.linkedin.com/in/rafaelselvagio/" target="_blank" rel="noopener noreferrer" class="contact-link linkedin">
                     <i class="fa-brands fa-linkedin"></i> LinkedIn
                 </a>
-                <a href="https://github.com/professor-rafael-selvagio" target="_blank" class="contact-link github">
+                <a href="https://github.com/professor-rafael-selvagio" target="_blank" rel="noopener noreferrer" class="contact-link github">
                     <i class="fa-brands fa-github"></i> GitHub
                 </a>
                 <a href="mailto:professor.rafael.selvagio@gmail.com" class="contact-link email1">
@@ -403,11 +735,11 @@
         </section>
 
         <!-- Right Side: Contact Form (Integrated with Formspree) -->
-        <section class="form-side">
+        <section class="form-side" id="contato">
             <h2>Mande uma mensagem</h2>
 
             <form action="https://formspree.io/f/xzdqbboa" method="POST" id="contact-form">
-                <!-- Campo dinâmico para onde o Formspree irá redirecionar após o envio -->
+                <!-- Dynamic field for Formspree return URL -->
                 <input type="hidden" name="_next" id="next-field">
                 
                 <div class="form-group">
@@ -433,6 +765,227 @@
 
     </div>
 
+    <!-- Projects Section -->
+    <section class="projects-section" id="projetos">
+        <div class="section-header">
+            <h2><i class="fa-solid fa-layer-group" style="color: #818cf8;"></i> Meus Projetos</h2>
+            <p>Softwares, aplicações e ferramentas desenvolvidas para educação, marketing e tecnologia</p>
+        </div>
+
+        <!-- Filter Categories -->
+        <div class="category-filters">
+            <button class="category-btn active" data-filter="all" onclick="filterProjects('all')">
+                <i class="fa-solid fa-shapes"></i> Todos <span class="category-badge-count">5</span>
+            </button>
+            <button class="category-btn" data-filter="marketing" onclick="filterProjects('marketing')">
+                <i class="fa-solid fa-bullhorn"></i> Marketing Digital <span class="category-badge-count">2</span>
+            </button>
+            <button class="category-btn" data-filter="cursos" onclick="filterProjects('cursos')">
+                <i class="fa-solid fa-graduation-cap"></i> Cursos <span class="category-badge-count">1</span>
+            </button>
+            <button class="category-btn" data-filter="infantil" onclick="filterProjects('infantil')">
+                <i class="fa-solid fa-child-reaching"></i> Educação Infantil <span class="category-badge-count">1</span>
+            </button>
+            <button class="category-btn" data-filter="docencia" onclick="filterProjects('docencia')">
+                <i class="fa-solid fa-chalkboard-user"></i> Ferramentas Docentes <span class="category-badge-count">1</span>
+            </button>
+        </div>
+
+        <div class="projects-grid">
+            
+            <!-- Project 1: Simulador de Campanha de Marketing -->
+            <article class="project-card" data-category="marketing">
+                <div class="project-banner banner-blue">
+                    <div class="project-banner-grid"></div>
+                    <div class="project-banner-content">
+                        <span class="project-badge-tag tag-mkt">Marketing Digital</span>
+                        <div class="project-banner-title">MKT IA Simulador</div>
+                    </div>
+                    <div class="project-banner-icon">
+                        <i class="fa-solid fa-chart-line" style="color: #38bdf8;"></i>
+                    </div>
+                </div>
+
+                <div class="project-body">
+                    <h3 class="project-title">Simulador de Campanha de Marketing</h3>
+                    <p class="project-desc">
+                        Simulador interativo de campanhas de marketing digital com inteligência artificial, projetado para testar estratégias, avaliar orçamentos e calcular métricas de conversão.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="project-tag">Marketing Digital</span>
+                        <span class="project-tag">Simulador</span>
+                        <span class="project-tag">Inteligência Artificial</span>
+                        <span class="project-tag">Analytics</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://professor-rafael-selvagio.github.io/mktia-simulador/" target="_blank" rel="noopener noreferrer" class="project-btn primary">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Acessar Aplicação
+                        </a>
+                        <a href="https://github.com/professor-rafael-selvagio/mktia-simulador" target="_blank" rel="noopener noreferrer" class="project-btn secondary">
+                            <i class="fa-brands fa-github"></i> Repositório
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 2: Landing Page de Captura de Dados -->
+            <article class="project-card" data-category="marketing">
+                <div class="project-banner banner-pink">
+                    <div class="project-banner-grid"></div>
+                    <div class="project-banner-content">
+                        <span class="project-badge-tag tag-landing">Marketing Digital</span>
+                        <div class="project-banner-title">Captura de Dados</div>
+                    </div>
+                    <div class="project-banner-icon">
+                        <i class="fa-solid fa-database" style="color: #f472b6;"></i>
+                    </div>
+                </div>
+
+                <div class="project-body">
+                    <h3 class="project-title">Landing Page de Captura de Dados</h3>
+                    <p class="project-desc">
+                        Landing page criada para demonstrar na prática aos alunos como funciona a captura de leads, estratégias de conversão e estruturação analítica de dados de marketing.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="project-tag">Landing Page</span>
+                        <span class="project-tag">Captura de Dados</span>
+                        <span class="project-tag">Leads</span>
+                        <span class="project-tag">UI/UX</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://professor-rafael-selvagio.github.io/mktia-dados/" target="_blank" rel="noopener noreferrer" class="project-btn primary">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Acessar Aplicação
+                        </a>
+                        <a href="https://github.com/professor-rafael-selvagio/mktia-dados" target="_blank" rel="noopener noreferrer" class="project-btn secondary">
+                            <i class="fa-brands fa-github"></i> Repositório
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 3: Programação em Python -->
+            <article class="project-card" data-category="cursos">
+                <div class="project-banner banner-python">
+                    <div class="project-banner-grid"></div>
+                    <div class="project-banner-content">
+                        <span class="project-badge-tag tag-python">Curso</span>
+                        <div class="project-banner-title">Python Interativo</div>
+                    </div>
+                    <div class="project-banner-icon">
+                        <i class="fa-brands fa-python" style="color: #60a5fa;"></i>
+                    </div>
+                </div>
+
+                <div class="project-body">
+                    <h3 class="project-title">Curso: Programação em Python</h3>
+                    <p class="project-desc">
+                        Material interativo e ambiente didático desenvolvido para suporte aos alunos no aprendizado da linguagem Python, lógica de programação e resolução de problemas práticos.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Educação</span>
+                        <span class="project-tag">Programação</span>
+                        <span class="project-tag">Lógica</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://professor-rafael-selvagio.github.io/programacao-em-python/" target="_blank" rel="noopener noreferrer" class="project-btn primary">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Acessar Aplicação
+                        </a>
+                        <a href="https://github.com/professor-rafael-selvagio/programacao-em-python" target="_blank" rel="noopener noreferrer" class="project-btn secondary">
+                            <i class="fa-brands fa-github"></i> Repositório
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 4: Sílabas (Educação Infantil) -->
+            <article class="project-card" data-category="infantil">
+                <div class="project-banner banner-playful">
+                    <div class="project-banner-grid"></div>
+                    <div class="project-banner-content">
+                        <span class="project-badge-tag tag-infantil">Educação Infantil</span>
+                        <div class="project-banner-title">Sílabas & Frases</div>
+                    </div>
+                    <div class="project-banner-icon">
+                        <i class="fa-solid fa-book-open-reader" style="color: #fb7185;"></i>
+                    </div>
+                </div>
+
+                <div class="project-body">
+                    <h3 class="project-title">Sílabas e Formação de Leitura</h3>
+                    <p class="project-desc">
+                        Ferramenta lúdica para auxílio na fase de alfabetização infantil, gerando combinações silábicas e frases estimulantes para as crianças praticarem leitura de maneira divertida.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="project-tag">Educação Infantil</span>
+                        <span class="project-tag">Alfabetização</span>
+                        <span class="project-tag">Leitura</span>
+                        <span class="project-tag">Pedagogia</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://professor-rafael-selvagio.github.io/silabas/" target="_blank" rel="noopener noreferrer" class="project-btn primary">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Acessar Aplicação
+                        </a>
+                        <a href="https://github.com/professor-rafael-selvagio/silabas" target="_blank" rel="noopener noreferrer" class="project-btn secondary">
+                            <i class="fa-brands fa-github"></i> Repositório
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 5: Capa Classroom (Ferramentas Docentes) -->
+            <article class="project-card" data-category="docencia">
+                <div class="project-banner banner-green">
+                    <div class="project-banner-grid"></div>
+                    <div class="project-banner-content">
+                        <span class="project-badge-tag tag-senai">SENAI SP</span>
+                        <div class="project-banner-title">Capa Classroom</div>
+                    </div>
+                    <div class="project-banner-icon">
+                        <i class="fa-solid fa-graduation-cap" style="color: #4ade80;"></i>
+                    </div>
+                </div>
+
+                <div class="project-body">
+                    <h3 class="project-title">Gerador de Capa Google Classroom</h3>
+                    <p class="project-desc">
+                        Ferramenta web para personalização de capas oficiais (formato 4:1) do Google Classroom com dados do curso, professor, upload de ícones PNG e exportação em alta resolução.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="project-tag">HTML5</span>
+                        <span class="project-tag">CSS3</span>
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">html2canvas</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://professor-rafael-selvagio.github.io/capa-classroom/" target="_blank" rel="noopener noreferrer" class="project-btn primary">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Acessar Aplicação
+                        </a>
+                        <a href="https://github.com/professor-rafael-selvagio/capa-classroom" target="_blank" rel="noopener noreferrer" class="project-btn secondary">
+                            <i class="fa-brands fa-github"></i> Repositório
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <p>&copy; 2026 Rafael Selvagio • Instrutor de Formação Profissional</p>
+    </footer>
+
     <!-- Success Message Modal Overlay -->
     <div class="modal-overlay" id="success-modal">
         <div class="modal-card">
@@ -445,14 +998,46 @@
         </div>
     </div>
 
-    <!-- JavaScript code to handle dynamic redirect URL and capture parameter -->
+    <!-- JavaScript code -->
     <script>
-        // 1. Define dinamicamente a URL atual + o parâmetro de sucesso para o Formspree saber para onde retornar
-        // Isso funciona perfeitamente independente se rodar local ou no GitHub Pages
+        // 1. Filtragem interativa por categorias
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.category-btn');
+
+            // Atualiza botões ativos
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-filter') === category) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Anima e filtra os cartões
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (category === 'all' || cardCategory === category) {
+                    card.style.display = 'flex';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0) scale(1)';
+                    }, 20);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.92)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 250);
+                }
+            });
+        }
+
+        // 2. Define dinamicamente a URL atual + o parâmetro de sucesso para o Formspree saber para onde retornar
         const currentUrl = window.location.href.split('?')[0]; 
         document.getElementById('next-field').value = currentUrl + '?success=true';
 
-        // 2. Verifica na URL se existe o parâmetro de sucesso ao carregar a página
+        // 3. Verifica na URL se existe o parâmetro de sucesso ao carregar a página
         window.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get('success') === 'true') {
@@ -461,7 +1046,7 @@
             }
         });
 
-        // 3. Função para fechar o modal e limpar o parâmetro da URL de forma elegante
+        // 4. Função para fechar o modal e limpar o parâmetro da URL de forma elegante
         function closeModal() {
             const modal = document.getElementById('success-modal');
             modal.classList.remove('active');
