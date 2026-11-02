@@ -423,6 +423,9 @@
         .banner-playful {
             background: linear-gradient(135deg, #3b0764 0%, #9333ea 50%, #f43f5e 100%);
         }
+        .banner-purple {
+            background: linear-gradient(135deg, #180d30 0%, #46178f 55%, #8b5cf6 100%);
+        }
 
         .project-banner-grid {
             position: absolute;
@@ -457,6 +460,7 @@
         .tag-landing { background: #db2777; }
         .tag-python { background: #eab308; color: #0f172a !important; }
         .tag-infantil { background: #f43f5e; }
+        .tag-kahoot { background: #8b5cf6; }
 
         .project-banner-title {
             color: #fff;
@@ -775,7 +779,7 @@
         <!-- Filter Categories -->
         <div class="category-filters">
             <button class="category-btn active" data-filter="all" onclick="filterProjects('all')">
-                <i class="fa-solid fa-shapes"></i> Todos <span class="category-badge-count">5</span>
+                <i class="fa-solid fa-shapes"></i> Todos <span class="category-badge-count">6</span>
             </button>
             <button class="category-btn" data-filter="marketing" onclick="filterProjects('marketing')">
                 <i class="fa-solid fa-bullhorn"></i> Marketing Digital <span class="category-badge-count">2</span>
@@ -787,7 +791,7 @@
                 <i class="fa-solid fa-child-reaching"></i> Educação Infantil <span class="category-badge-count">1</span>
             </button>
             <button class="category-btn" data-filter="docencia" onclick="filterProjects('docencia')">
-                <i class="fa-solid fa-chalkboard-user"></i> Ferramentas Docentes <span class="category-badge-count">1</span>
+                <i class="fa-solid fa-chalkboard-user"></i> Ferramentas Docentes <span class="category-badge-count">2</span>
             </button>
         </div>
 
@@ -972,6 +976,45 @@
                             <i class="fa-solid fa-arrow-up-right-from-square"></i> Acessar Aplicação
                         </a>
                         <a href="https://github.com/professor-rafael-selvagio/capa-classroom" target="_blank" rel="noopener noreferrer" class="project-btn secondary">
+                            <i class="fa-brands fa-github"></i> Repositório
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 6: Kahoot! AI Creator (Extensão Chrome / Ferramentas Docentes) -->
+            <article class="project-card" data-category="docencia">
+                <div class="project-banner banner-purple">
+                    <div class="project-banner-grid"></div>
+                    <div class="project-banner-content">
+                        <span class="project-badge-tag tag-kahoot">Extensão Chrome</span>
+                        <div class="project-banner-title">Kahoot! AI Creator</div>
+                    </div>
+                    <div class="project-banner-icon">
+                        <i class="fa-solid fa-bolt" style="color: #fbbf24;"></i>
+                    </div>
+                </div>
+
+                <div class="project-body">
+                    <h3 class="project-title">Kahoot! AI Creator (Extensão Chrome)</h3>
+                    <p class="project-desc">
+                        Extensão para o Google Chrome que automatiza a criação de jogos e quizzes no Kahoot! com Inteligência Artificial (Google Gemini) ou motor offline inteligente, preenchendo perguntas, alternativas e gabarito balanceados.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="project-tag">Google Chrome</span>
+                        <span class="project-tag">Kahoot!</span>
+                        <span class="project-tag">Inteligência Artificial</span>
+                        <span class="project-tag">Gemini API</span>
+                        <span class="project-tag">Gamificação</span>
+                        <span class="project-tag">Docência</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://github.com/professor-rafael-selvagio/kahoot-ai-creator-extension" target="_blank" rel="noopener noreferrer" class="project-btn primary">
+                            <i class="fa-brands fa-chrome"></i> Acessar Extensão
+                        </a>
+                        <a href="https://github.com/professor-rafael-selvagio/kahoot-ai-creator-extension" target="_blank" rel="noopener noreferrer" class="project-btn secondary">
                             <i class="fa-brands fa-github"></i> Repositório
                         </a>
                     </div>
