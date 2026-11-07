@@ -1,0 +1,70 @@
+/* =========================================================
+   DESIGN TOKENS & VARIÁVEIS DO SISTEMA
+   Identidade: Fundo escuro industrial, Verde (Inovação),
+   Amarelo (Atenção/Destaque), Azul (Confiança/Estabilidade)
+   ========================================================= */
+:root {
+    color-scheme: dark;
+
+    /* Cores Principais da Identidade */
+    --c-green: #10b981;
+    --c-green-bright: #00f5a0;
+    --c-green-hover: #059669;
+    --c-green-glow: rgba(16, 185, 129, 0.25);
+    --c-green-subtle: rgba(16, 185, 129, 0.10);
+    --c-green-border: rgba(16, 185, 129, 0.35);
+
+    --c-yellow: #fbbf24;
+    --c-yellow-bright: #f59e0b;
+    --c-yellow-glow: rgba(251, 191, 36, 0.25);
+    --c-yellow-subtle: rgba(251, 191, 36, 0.10);
+    --c-yellow-border: rgba(251, 191, 36, 0.35);
+
+    --c-blue: #0284c7;
+    --c-blue-bright: #38bdf8;
+    --c-blue-glow: rgba(56, 189, 248, 0.22);
+    --c-blue-subtle: rgba(56, 189, 248, 0.08);
+    --c-blue-border: rgba(56, 189, 248, 0.30);
+
+    /* Superfícies e Fundos Tecnológicos */
+    --c-bg: #06090e;
+    --c-bg-subtle: #090e15;
+    --c-surface: #0c121a;
+    --c-surface-elevated: #111a24;
+    --c-surface-card: rgba(13, 20, 29, 0.78);
+    --c-surface-card-hover: rgba(18, 27, 39, 0.90);
+    --c-surface-input: rgba(10, 16, 24, 0.85);
+
+    /* Tipografia e Cores de Texto */
+    --c-text: #f3f6f9;
+    --c-text-muted: #94a3b8;
+    --c-text-faint: #64748b;
+    --c-on-accent: #02120b;
+
+    /* Bordas de Precisão (1px) */
+    --c-border: rgba(148, 163, 184, 0.14);
+    --c-border-strong: rgba(148, 163, 184, 0.25);
+    --c-border-glow: rgba(16, 185, 129, 0.45);
+
+    /* Fontes */
+    --font-sans: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', monospace;
+
+    /* Espaçamentos e Geometria */
+    --r-sm: 8px;
+    --r-md: 12px;
+    --r-lg: 18px;
+    --r-xl: 24px;
+    --r-pill: 9999px;
+
+    /* Sombras e Profundidade */
+    --shadow-subtle: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+    --shadow-card: 0 20px 45px -10px rgba(0, 0, 0, 0.65), 0 0 0 1px var(--c-border);
+    --shadow-card-hover: 0 25px 55px -10px rgba(0, 0, 0, 0.75), 0 0 25px var(--c-green-glow);
+
+    /* Animações e Transições */
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --t-fast: 160ms;
+    --t-base: 240ms;
+    --t-slow: 350ms;
+}
