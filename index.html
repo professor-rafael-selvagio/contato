@@ -3,18 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Rafael Selvagio | Portfólio, Contato & Softwares</title>
-    <meta name="description" content="Página profissional de Rafael Selvagio — Instrutor de Formação Profissional e Desenvolvedor. Softwares educacionais, simuladores e ferramentas com IA.">
+    <title>Prof. Esp. Rafael de Sena Selvagio | Portfólio, Contato & Softwares</title>
+    <meta name="description" content="Página profissional de Prof. Esp. Rafael de Sena Selvagio — Instrutor de Formação Profissional e Desenvolvedor. Softwares educacionais, simuladores e ferramentas com IA.">
     <meta name="theme-color" content="#06090e">
     <meta name="color-scheme" content="dark">
+
+    <!-- Prevenção de flash de tema (Anti-flicker) -->
+    <script>
+        (function() {
+            try {
+                var saved = localStorage.getItem('portfolio-theme');
+                var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var theme = saved || (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+                document.documentElement.style.colorScheme = theme;
+            } catch (e) {}
+        })();
+    </script>
 
     <!-- Favicon SVG Vetorial -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300f5a0' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='16 18 22 12 16 6'/%3E%3Cpolyline points='8 6 2 12 8 18'/%3E%3C/svg%3E">
 
     <!-- Open Graph / Meta Compartilhamento -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Rafael Selvagio | Portfólio, Contato & Softwares">
-    <meta property="og:description" content="Softwares educacionais, simuladores e ferramentas com Inteligência Artificial por Rafael Selvagio.">
+    <meta property="og:title" content="Prof. Esp. Rafael de Sena Selvagio | Portfólio, Contato & Softwares">
+    <meta property="og:description" content="Softwares educacionais, simuladores e ferramentas com Inteligência Artificial por Prof. Esp. Rafael de Sena Selvagio.">
     <meta property="og:image" content="assets/images/Rafael.jpeg">
 
     <!-- Google Fonts: Manrope (Sans) & JetBrains Mono (Code/Badges) -->
@@ -46,9 +59,9 @@
     <header class="topbar">
         <div class="topbar-container">
             <a href="#sobre" class="brand-logo" aria-label="Ir para o topo">
-                <img src="assets/images/Rafael.jpeg" alt="Rafael Selvagio" class="brand-avatar">
+                <img src="assets/images/Rafael.jpeg" alt="Prof. Esp. Rafael de Sena Selvagio" class="brand-avatar">
                 <div class="brand-text">
-                    <span class="brand-name">Rafael Selvagio</span>
+                    <span class="brand-name">Prof. Esp. Rafael de Sena Selvagio</span>
                     <span class="brand-role">Instrutor &amp; Desenvolvedor</span>
                 </div>
             </a>
@@ -59,10 +72,15 @@
                 <span>Disponível para contato</span>
             </div>
 
-            <!-- Navegação Rápida -->
+            <!-- Navegação Rápida & Tema -->
             <nav class="nav-links">
                 <a href="#contato" class="nav-link">Contato</a>
                 <a href="#projetos" class="nav-link">Projetos</a>
+                <!-- Alternador de Tema Claro/Escuro -->
+                <button type="button" class="theme-toggle-btn" id="theme-toggle" aria-label="Alternar tema claro/escuro" title="Alternar tema claro/escuro">
+                    <svg class="theme-icon theme-icon-sun svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="theme-icon theme-icon-moon svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
                 <a href="#contato" class="nav-btn-cta">
                     <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                     <span>Mensagem</span>
@@ -80,11 +98,11 @@
         <section class="contact-hero-grid" id="sobre">
             
             <!-- Card da Esquerda: Perfil do Instrutor & Canais -->
-            <aside class="tech-card profile-card" aria-label="Informações sobre Rafael Selvagio">
+            <aside class="tech-card profile-card" aria-label="Informações sobre Prof. Esp. Rafael de Sena Selvagio">
                 <div>
                     <div class="profile-header">
                         <div class="avatar-tech-frame">
-                            <img src="assets/images/Rafael.jpeg" alt="Foto de perfil de Rafael Selvagio" class="profile-photo">
+                            <img src="assets/images/Rafael.jpeg" alt="Foto de perfil de Prof. Esp. Rafael de Sena Selvagio" class="profile-photo">
                             <div class="profile-online-badge" title="Status: Online"></div>
                         </div>
 
@@ -92,7 +110,7 @@
                             <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
                             Perfil Profissional
                         </span>
-                        <h1 class="profile-name">Rafael Selvagio</h1>
+                        <h1 class="profile-name">Prof. Esp. Rafael de Sena Selvagio</h1>
                         <p class="profile-role">Instrutor de Formação Profissional</p>
                         <p class="profile-tagline">
                             "Vamos construir algo incrível juntos? Conectando tecnologia, automação e educação prática."
@@ -599,7 +617,7 @@
         <footer class="site-footer">
             <div class="footer-brand">
                 <svg class="svg-icon" style="color: var(--c-green);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                <span>Rafael Selvagio</span>
+                <span>Prof. Esp. Rafael de Sena Selvagio</span>
             </div>
             <div class="footer-meta">
                 <span>&copy; 2026 Todos os direitos reservados</span>
@@ -622,7 +640,7 @@
             </div>
             <h3 class="modal-headline" id="modal-title">Mensagem Enviada!</h3>
             <p class="modal-description">
-                Obrigado pelo contato! Sua mensagem foi transmitida com sucesso para <strong>Rafael Selvagio</strong> e será respondida o mais breve possível.
+                Obrigado pelo contato! Sua mensagem foi transmitida com sucesso para <strong>Prof. Esp. Rafael de Sena Selvagio</strong> e será respondida o mais breve possível.
             </p>
             <button class="modal-dismiss-btn" onclick="closeModal()">
                 Concluir

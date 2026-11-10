@@ -1,7 +1,7 @@
-# Rafael Selvagio — Portfólio, Contato & Softwares
+# Prof. Esp. Rafael de Sena Selvagio — Portfólio, Contato & Softwares
 
 <p align="center">
-  <img src="assets/images/Rafael.jpeg" alt="Rafael Selvagio" width="120" style="border-radius: 50%; border: 3px solid #10b981; box-shadow: 0 0 20px rgba(16, 185, 129, 0.35);">
+  <img src="assets/images/Rafael.jpeg" alt="Prof. Esp. Rafael de Sena Selvagio" width="120" style="border-radius: 50%; border: 3px solid #10b981; box-shadow: 0 0 20px rgba(16, 185, 129, 0.35);">
 </p>
 
 <p align="center">
@@ -168,7 +168,7 @@ A interface foi projetada sob o princípio *responsive-first*, garantindo experi
 
 ## 👨‍🏫 Autor
 
-**Rafael Selvagio**  
+**Prof. Esp. Rafael de Sena Selvagio**  
 *Instrutor de Formação Profissional & Desenvolvedor*  
 - **LinkedIn:** [linkedin.com/in/rafaelselvagio](https://www.linkedin.com/in/rafaelselvagio/)  
 - **GitHub:** [github.com/professor-rafael-selvagio](https://github.com/professor-rafael-selvagio)  
@@ -177,5 +177,5 @@ A interface foi projetada sob o princípio *responsive-first*, garantindo experi
 ---
 
 <p align="center">
-  <sub>© 2026 Rafael Selvagio • Todos os direitos reservados.</sub>
+  <sub>© 2026 Prof. Esp. Rafael de Sena Selvagio • Todos os direitos reservados.</sub>
 </p>

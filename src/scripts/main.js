@@ -1,8 +1,77 @@
 /**
- * Rafael Selvagio — Script Principal
- * Funcionalidades: Filtragem de projetos, Envio AJAX com Formspree,
- * Validação de formulário em tempo real e Gerenciamento do Modal de Feedback.
+ * Prof. Esp. Rafael de Sena Selvagio — Script Principal
+ * Funcionalidades: Alternância de Tema Claro/Escuro, Filtragem de projetos,
+ * Envio AJAX com Formspree, Validação em tempo real e Feedback Modal.
  */
+
+// -------------------------------------------------------------
+// 0. GERENCIAMENTO DE TEMA (CLARO / ESCURO)
+// -------------------------------------------------------------
+function initTheme() {
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+    const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
+
+    function applyTheme(theme, save = true) {
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.style.colorScheme = theme;
+        if (themeMeta) {
+            themeMeta.setAttribute('content', theme === 'dark' ? '#06090e' : '#f8fafc');
+        }
+        if (colorSchemeMeta) {
+            colorSchemeMeta.setAttribute('content', theme);
+        }
+        if (themeToggleBtn) {
+            const label = theme === 'dark' ? 'Mudar para tema claro' : 'Mudar para tema escuro';
+            themeToggleBtn.setAttribute('aria-label', label);
+            themeToggleBtn.setAttribute('title', label);
+        }
+        if (save) {
+            try {
+                localStorage.setItem('portfolio-theme', theme);
+            } catch (e) {}
+        }
+    }
+
+    // Identifica o tema inicial
+    let savedTheme = null;
+    try {
+        savedTheme = localStorage.getItem('portfolio-theme');
+    } catch (e) {}
+
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+    applyTheme(initialTheme, false);
+
+    // Escuta clique no botão de alternância
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.add('theme-transitioning');
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+            const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(nextTheme, true);
+            setTimeout(() => {
+                document.documentElement.classList.remove('theme-transitioning');
+            }, 300);
+        });
+    }
+
+    // Escuta mudança de preferência do sistema operacional (caso o usuário não tenha definido manualmente)
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        try {
+            if (!localStorage.getItem('portfolio-theme')) {
+                applyTheme(e.matches ? 'dark' : 'light', false);
+            }
+        } catch (err) {}
+    });
+}
+
+// Inicializa o gerenciador de tema
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTheme);
+} else {
+    initTheme();
+}
 
 // -------------------------------------------------------------
 // 1. FILTRAGEM DINÂMICA DE PROJETOS POR CATEGORIA
