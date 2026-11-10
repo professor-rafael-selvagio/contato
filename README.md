@@ -10,6 +10,9 @@
 </p>
 
 <p align="center">
+  <a href="https://professor-rafael-selvagio.github.io/contato/" target="_blank">
+    <img src="https://img.shields.io/badge/Acessar%20Online-GitHub%20Pages-10b981?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Pages">
+  </a>
   <img src="https://img.shields.io/badge/Status-Online-10b981?style=for-the-badge&logo=statuspage&logoColor=white" alt="Status Online">
   <img src="https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20JavaScript-0284c7?style=for-the-badge&logo=javascript&logoColor=white" alt="Stack">
   <img src="https://img.shields.io/badge/Integração-Formspree-fbbf24?style=for-the-badge&logo=mailgun&logoColor=06090e" alt="Formspree">
@@ -17,10 +20,12 @@
 
 ---
 
-## 🌐 Demonstração Online
+## 🌐 Demonstração Online (GitHub Pages)
 
-Acesse a página publicada no GitHub Pages:
-👉 **[professor-rafael-selvagio.github.io/contato](https://professor-rafael-selvagio.github.io/contato/)**
+O projeto está publicado e totalmente funcional através do **GitHub Pages**:
+
+🔗 **Link de Acesso:**  
+👉 **[https://professor-rafael-selvagio.github.io/contato/](https://professor-rafael-selvagio.github.io/contato/)**
 
 ---
 

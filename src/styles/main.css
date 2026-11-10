@@ -1,7 +1,9 @@
 /* =========================================================
    RESET E BASE
    ========================================================= */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -57,7 +59,7 @@ body {
 .tech-grid {
     position: absolute;
     inset: 0;
-    background-image: 
+    background-image:
         linear-gradient(rgba(148, 163, 184, 0.035) 1px, transparent 1px),
         linear-gradient(90deg, rgba(148, 163, 184, 0.035) 1px, transparent 1px);
     background-size: 40px 40px;
@@ -104,9 +106,17 @@ body {
 }
 
 @keyframes pulseGlow {
-    0% { transform: scale(1) translate(0, 0); }
-    50% { transform: scale(1.08) translate(20px, -15px); }
-    100% { transform: scale(0.95) translate(-15px, 20px); }
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+
+    50% {
+        transform: scale(1.08) translate(20px, -15px);
+    }
+
+    100% {
+        transform: scale(0.95) translate(-15px, 20px);
+    }
 }
 
 /* =========================================================
@@ -210,8 +220,15 @@ body {
 }
 
 @keyframes beaconPulse {
-    0% { transform: scale(0.9); opacity: 1; }
-    100% { transform: scale(2.4); opacity: 0; }
+    0% {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(2.4);
+        opacity: 0;
+    }
 }
 
 .nav-links {
@@ -574,32 +591,60 @@ body {
     background: rgba(2, 132, 199, 0.08);
     transform: translateX(4px);
 }
-.channel-item.ch-linkedin:hover::before { background: #0a66c2; }
-.channel-item.ch-linkedin .channel-icon-box { color: #38bdf8; background: rgba(56, 189, 248, 0.12); }
+
+.channel-item.ch-linkedin:hover::before {
+    background: #0a66c2;
+}
+
+.channel-item.ch-linkedin .channel-icon-box {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+}
 
 .channel-item.ch-github:hover {
     border-color: rgba(255, 255, 255, 0.3);
     background: rgba(255, 255, 255, 0.06);
     transform: translateX(4px);
 }
-.channel-item.ch-github:hover::before { background: #f0f6fc; }
-.channel-item.ch-github .channel-icon-box { color: #f0f6fc; background: rgba(255, 255, 255, 0.1); }
+
+.channel-item.ch-github:hover::before {
+    background: #f0f6fc;
+}
+
+.channel-item.ch-github .channel-icon-box {
+    color: #f0f6fc;
+    background: rgba(255, 255, 255, 0.1);
+}
 
 .channel-item.ch-email-personal:hover {
     border-color: var(--c-yellow-border);
     background: rgba(251, 191, 36, 0.08);
     transform: translateX(4px);
 }
-.channel-item.ch-email-personal:hover::before { background: var(--c-yellow); }
-.channel-item.ch-email-personal .channel-icon-box { color: var(--c-yellow); background: var(--c-yellow-subtle); }
+
+.channel-item.ch-email-personal:hover::before {
+    background: var(--c-yellow);
+}
+
+.channel-item.ch-email-personal .channel-icon-box {
+    color: var(--c-yellow);
+    background: var(--c-yellow-subtle);
+}
 
 .channel-item.ch-email-senai:hover {
     border-color: var(--c-green-border);
     background: rgba(16, 185, 129, 0.08);
     transform: translateX(4px);
 }
-.channel-item.ch-email-senai:hover::before { background: var(--c-green); }
-.channel-item.ch-email-senai .channel-icon-box { color: var(--c-green-bright); background: var(--c-green-subtle); }
+
+.channel-item.ch-email-senai:hover::before {
+    background: var(--c-green);
+}
+
+.channel-item.ch-email-senai .channel-icon-box {
+    color: var(--c-green-bright);
+    background: var(--c-green-subtle);
+}
 
 .channel-item:hover .channel-arrow {
     color: var(--c-text);
@@ -870,7 +915,9 @@ textarea.form-input-control {
 }
 
 @keyframes spin {
-    100% { transform: rotate(360deg); }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .form-footer-privacy {
@@ -1044,7 +1091,7 @@ textarea.form-input-control {
 .banner-tech-grid {
     position: absolute;
     inset: 0;
-    background-image: 
+    background-image:
         linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
     background-size: 16px 16px;
@@ -1433,7 +1480,10 @@ textarea.form-input-control {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+
+    *,
+    *::before,
+    *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
