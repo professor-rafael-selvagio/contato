@@ -7,20 +7,23 @@
 // -------------------------------------------------------------
 // 0. GERENCIAMENTO DE TEMA (CLARO / ESCURO)
 // -------------------------------------------------------------
-function initTheme() {
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const themeMeta = document.querySelector('meta[name="theme-color"]');
-    const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
-
-    function applyTheme(theme, save = true) {
+// Assegura compatibilidade caso o script inline do head não tenha executado
+if (!window.applyTheme) {
+    let isToggling = false;
+    window.applyTheme = function(theme, save = true) {
+        if (theme !== 'dark' && theme !== 'light') theme = 'dark';
         document.documentElement.setAttribute('data-theme', theme);
         document.documentElement.style.colorScheme = theme;
+
+        const themeMeta = document.querySelector('meta[name="theme-color"]');
         if (themeMeta) {
             themeMeta.setAttribute('content', theme === 'dark' ? '#06090e' : '#f8fafc');
         }
+        const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
         if (colorSchemeMeta) {
             colorSchemeMeta.setAttribute('content', theme);
         }
+        const themeToggleBtn = document.getElementById('theme-toggle');
         if (themeToggleBtn) {
             const label = theme === 'dark' ? 'Mudar para tema claro' : 'Mudar para tema escuro';
             themeToggleBtn.setAttribute('aria-label', label);
@@ -31,39 +34,38 @@ function initTheme() {
                 localStorage.setItem('portfolio-theme', theme);
             } catch (e) {}
         }
-    }
+    };
 
-    // Identifica o tema inicial
-    let savedTheme = null;
-    try {
-        savedTheme = localStorage.getItem('portfolio-theme');
-    } catch (e) {}
+    window.toggleTheme = function() {
+        if (isToggling) return;
+        isToggling = true;
+        setTimeout(() => { isToggling = false; }, 300);
 
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
-    applyTheme(initialTheme, false);
+        document.documentElement.classList.add('theme-transitioning');
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        window.applyTheme(nextTheme, true);
+        setTimeout(() => {
+            document.documentElement.classList.remove('theme-transitioning');
+        }, 300);
+    };
+}
 
-    // Escuta clique no botão de alternância
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', () => {
-            document.documentElement.classList.add('theme-transitioning');
-            const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-            const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            applyTheme(nextTheme, true);
-            setTimeout(() => {
-                document.documentElement.classList.remove('theme-transitioning');
-            }, 300);
+function initTheme() {
+    // Sincroniza labels e acessibilidade com o tema ativo
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    window.applyTheme(currentTheme, false);
+
+    // Escuta mudança de preferência do sistema operacional caso usuário não tenha salvo
+    if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            try {
+                if (!localStorage.getItem('portfolio-theme')) {
+                    window.applyTheme(e.matches ? 'dark' : 'light', false);
+                }
+            } catch (err) {}
         });
     }
-
-    // Escuta mudança de preferência do sistema operacional (caso o usuário não tenha definido manualmente)
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        try {
-            if (!localStorage.getItem('portfolio-theme')) {
-                applyTheme(e.matches ? 'dark' : 'light', false);
-            }
-        } catch (err) {}
-    });
 }
 
 // Inicializa o gerenciador de tema

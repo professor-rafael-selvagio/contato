@@ -258,12 +258,12 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     border-radius: var(--r-pill);
     background: var(--c-surface-elevated);
-    border: 1px solid var(--c-border);
-    color: var(--c-text-muted);
+    border: 1.5px solid var(--c-green-border);
+    color: var(--c-text);
     cursor: pointer;
     transition: all var(--t-fast) var(--ease);
     padding: 0;
@@ -271,14 +271,15 @@ body {
     user-select: none;
     -webkit-tap-highlight-color: transparent;
     flex-shrink: 0;
+    box-shadow: 0 2px 8px var(--c-green-glow);
 }
 
 .theme-toggle-btn:hover {
-    border-color: var(--c-border-strong);
+    border-color: var(--c-green-bright);
     color: var(--c-text);
     background: var(--c-surface-card-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px var(--c-green-glow);
+    transform: translateY(-1px) scale(1.05);
+    box-shadow: 0 0 15px var(--c-green-glow);
 }
 
 .theme-toggle-btn:active {
@@ -286,8 +287,8 @@ body {
 }
 
 .theme-toggle-btn .theme-icon {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     transition: transform var(--t-base) var(--ease), opacity var(--t-base) var(--ease);
 }
 
@@ -301,23 +302,26 @@ body {
     color: var(--c-blue);
 }
 
+:root[data-theme="dark"] .theme-icon-sun,
+[data-theme="dark"] .theme-icon-sun {
+    display: block !important;
+    color: var(--c-yellow) !important;
+}
+
+:root[data-theme="dark"] .theme-icon-moon,
+[data-theme="dark"] .theme-icon-moon {
+    display: none !important;
+}
+
+:root[data-theme="light"] .theme-icon-sun,
 [data-theme="light"] .theme-icon-sun {
-    display: none;
+    display: none !important;
 }
 
+:root[data-theme="light"] .theme-icon-moon,
 [data-theme="light"] .theme-icon-moon {
-    display: block;
-    color: var(--c-blue-bright);
-}
-
-@media (prefers-color-scheme: light) {
-    :root:not([data-theme="dark"]) .theme-icon-sun {
-        display: none;
-    }
-    :root:not([data-theme="dark"]) .theme-icon-moon {
-        display: block;
-        color: var(--c-blue-bright);
-    }
+    display: block !important;
+    color: var(--c-blue-bright) !important;
 }
 
 .nav-btn-cta {
@@ -471,8 +475,10 @@ body {
     font-weight: 800;
     color: var(--c-text);
     letter-spacing: -0.02em;
-    line-height: 1.2;
+    line-height: 1.25;
     margin-bottom: 6px;
+    word-break: normal;
+    overflow-wrap: break-word;
 }
 
 .profile-role {
@@ -1495,6 +1501,43 @@ textarea.form-input-control {
 }
 
 @media (max-width: 600px) {
+    .topbar-container {
+        padding: 10px 16px;
+        gap: 12px;
+    }
+
+    .brand-logo {
+        min-width: 0;
+        flex: 1 1 auto;
+        gap: 10px;
+    }
+
+    .brand-avatar {
+        width: 36px;
+        height: 36px;
+        flex-shrink: 0;
+    }
+
+    .brand-text {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .brand-name {
+        font-size: 0.84rem;
+        line-height: 1.2;
+        white-space: normal;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .brand-role {
+        display: none;
+    }
+
     .status-beacon {
         display: none;
     }
@@ -1503,39 +1546,29 @@ textarea.form-input-control {
         display: none;
     }
 
-    .nav-links {
-        gap: 10px;
-    }
-
-    .topbar-container {
-        padding: 10px 16px;
-    }
-
-    .brand-avatar {
-        width: 32px;
-        height: 32px;
-    }
-
-    .brand-name {
-        font-size: 0.82rem;
-        line-height: 1.25;
-    }
-
-    .brand-role {
-        font-size: 0.62rem;
-    }
-
     .nav-btn-cta {
-        padding: 6px 12px;
-        font-size: 0.78rem;
+        display: none;
+    }
+
+    .nav-links {
+        gap: 0;
+        flex-shrink: 0;
+    }
+
+    .theme-toggle-btn {
+        width: 40px;
+        height: 40px;
     }
 
     .profile-name {
-        font-size: 1.55rem;
+        font-size: 1.35rem;
+        line-height: 1.3;
+        word-break: normal;
+        overflow-wrap: break-word;
     }
 
     .form-title {
-        font-size: 1.5rem;
+        font-size: 1.45rem;
     }
 
     .category-filter-scroller {
@@ -1557,7 +1590,7 @@ textarea.form-input-control {
 
 @media (max-width: 420px) {
     .brand-name {
-        font-size: 0.75rem;
+        font-size: 0.78rem;
     }
 
     .brand-role {
